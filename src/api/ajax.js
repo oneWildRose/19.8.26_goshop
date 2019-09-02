@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-module.exports = function ajax(url = '', data = {}, type = 'GET') {
+export default function ajax(url = '', data = {}, type = 'GET') {
   return new Promise(function (resolve, reject) {
 
     let promise
@@ -24,9 +24,8 @@ module.exports = function ajax(url = '', data = {}, type = 'GET') {
 
     promise.then(response => {
       resolve(response.data)
+    }).catch(error => {
+      reject(error)
     })
-      .catch(error => {
-        reject(error)
-      })
   })
 }

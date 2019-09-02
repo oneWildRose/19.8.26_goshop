@@ -12,6 +12,9 @@ export default {
   name: 'App',
   components: {
     Footer
+  },
+  mounted() {
+    this.$store.dispatch('getAddress')
   }
 };
 </script>
